@@ -1,3 +1,7 @@
+"""
+Joshua Parkin - Python script to work out cost of a meal based on tax and tip ammount
+"""
+
 print "Welcome to the taxes and tip calculator!" #Welcoming the user
 
 price_b_tax = float(raw_input("What is the price before tax?")) #Base price of meal
