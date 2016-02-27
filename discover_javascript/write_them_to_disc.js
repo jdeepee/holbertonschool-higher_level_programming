@@ -6,19 +6,18 @@ var options = {
   path: '/search/repositories?q=language:javascript&sort=stars&order=desc',
   headers: {
     'User-Agent': 'Holberton_School',
-    'Authorization': 'token'
+    'Authorization': 'token 61caf9746ee6068ca819094f119c90c96dcd9b49'
   }
 };
 
 const chunks = []
 var req = https.request(options, function(res){
-  console.log(res.statusCode);
   res.on('data', (chunk) => {
     chunks.push(chunk);
   });
   res.on('end', () => {
     var jsonString = chunks.join('');
-    fs.appendFile('/tmp/16', jsonString, (err) => {
+    fs.appendFile('/tmp/14', jsonString, (err) => {
       if (err) throw err;
       console.log('The data was appended to file!');
     });
