@@ -37,4 +37,4 @@ class Circle():
 		seg1 = r**2*math.acos((d**2+r**2-R**2)/(2*d*r)) + R**2*math.acos((d**2+R**2-r**2)/(2*d*R))
 		seg2 = 0.5*(math.sqrt((-d+r+R)*(d+r-R)*(d-r+R)*(d+r+R)))
 
-		return seg1 - seg2
+		return (seg1 - seg2) / self.area()
