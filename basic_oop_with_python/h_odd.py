@@ -1,5 +1,5 @@
-
 def odd(x):
+	''' checking if even '''
 	if x % 2 == 0:
 		return 0
 	else:

@@ -4,4 +4,5 @@ def fibonacci(x):
 	elif x == 1: 
 		return 1
 	else: 
+		''' recurse through '''
 		return fibonacci(x-1)+fibonacci(x-2)

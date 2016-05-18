@@ -1,3 +1,3 @@
 import string
-
-print string.lowercase
+''' print all lowercase characters '''
+print string.lowercase 

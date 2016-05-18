@@ -1,6 +1,6 @@
 class Square():
 	def __init__(self, side_length):
-		self._side_length = side_length
+		self.__side_length = side_length
 
 	def set_center(self, center):
 		self._center = center
@@ -15,24 +15,45 @@ class Square():
 		return self._center
 
 	def area(self):
-		return self._side_length * self._side_length
+		return self.__side_length * self.__side_length
 
-	def print_square(self):
-		if (self._side_length == 1):
-			print "*"
+	def __print_top_bottom(self):
+		i = 0
+		line = ''
+		while i < self.__side_length:
+			line += "*"
+			i += 1
+
+		return line 
+
+	def __print_middle(self):
+		i = 0;
+		line = ''
+		while i < self.__side_length:
+			if i == 0 or i == self.__side_length - 1:
+				line += '*'
+				i += 1
+			else:
+				line += ' '
+				i += 1
+		return line
+
+	def __call__(self):
+		if self.__side_length <= 0:
+			return ''
+
+		elif self.__side_length == 1:
+			return '*'
 
 		else:
-			i = 0
-			gap = self._side_length - 4
-			height = self._side_length - 2
+			i = 2
+			square = ''
+			square += self.__print_top_bottom() + '\n'
 
-			print "*" * self._side_length
-
-			while(i < height):
-				print "*",
-				print " " * gap,
-				print "*"
-
+			while i < self.__side_length:
+				square += self.__print_middle() + '\n'
 				i += 1
 
-			print "*" * self._side_length
+			square += self.__print_top_bottom()
+
+			return square

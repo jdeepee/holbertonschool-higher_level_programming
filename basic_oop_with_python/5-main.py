@@ -12,5 +12,3 @@ if c1.intersection(c2):
     print "Intersection between %s and %s" % (c1.name, c2.name)
 else:
     print "No intersection between %s and %s" % (c1.name, c2.name)
-
-print "%s is %f%% inside %s" % (c2.name, c1.intersection_percentage(c2)*100, c1.name)
