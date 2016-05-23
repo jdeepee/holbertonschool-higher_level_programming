@@ -330,23 +330,23 @@ class Adult(Person):
 
 
 class Senior(Person):
-    def can_run(self):
-        return False
+	def can_run(self):
+		return False
 
-    def need_help(self):
-        return True
+	def need_help(self):
+		return True
 
-    def is_young(self):
-        return False
+	def is_young(self):
+		return False
 
-    def can_vote(self):
-        return True
+	def can_vote(self):
+		return True
 
-    def can_be_married(self):
-        return True
+	def can_be_married(self):
+		return True
 
-    def can_have_child(self):
-        return False
+	def can_have_child(self):
+		return False
 
 	def who_are_my_grandchildren(self, list_person):
 		if not list_person or not isinstance(list_person, list) or not all(isinstance(person, Person) for person in list_person):
