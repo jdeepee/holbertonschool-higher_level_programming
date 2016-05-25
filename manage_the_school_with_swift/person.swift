@@ -14,8 +14,13 @@ class Person {
 	}
 }
 
+protocol Classify {
+	func isStudent() -> Bool
+}
+
 enum Subject: String {
 	case Math, English, French, History
+}
 
 class Mentor: Person, Classify {
 	let subject: Subject
@@ -65,10 +70,6 @@ class Student: Person, Classify {
 	func averageAll() -> Float {
 		return list_exercises.reduce(0) {$0 + Float($1.note)} / Float(list_exercises.count)
 	}
-}
-
-protocol Classify {
-	func isStudent() -> Bool
 }
 
 class School {
@@ -153,16 +154,17 @@ class School {
 	func studentsAgeAverge() -> Int {
 		return self.studentsAgeAverage()
 	}
+}
 
-	class Exercise {
-		var subject: Subject
-		var note: Int
+class Exercise {
+	var subject: Subject
+	var note: Int
 
-		init(subject: Subject, note: Int = 0) {
-			self.subject = subject
-			self.note = note
-			setNote(note)
-		}
+	init(subject: Subject, note: Int = 0) {
+		self.subject = subject
+		self.note = note
+		setNote(note)
+	}
 
 	func setNote(note: Int) {
 		self.note = note
